@@ -4,7 +4,7 @@ var drawerContext = vp.getContext("2d");
 var mapTileImg = "img/tile.png";
 
 var mapControl = new Image();
-mapControl.src = mapTile
+mapControl.src = mapTileImg;
 mapControl.addEventListener("load", draw);
 
 

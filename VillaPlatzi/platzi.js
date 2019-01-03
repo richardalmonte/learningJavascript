@@ -19,6 +19,10 @@ var chick = {
     loaded: false
 };
 
+var cowQty = getRandom(5, 25);
+var pigQty = getRandom(5, 25);
+var chickQty = getRandom(5, 25);
+
 tile.image = new Image();
 tile.image.src = tile.url;
 tile.image.addEventListener("load", loadTile);
@@ -64,12 +68,25 @@ function draw() {
         drawerContext.drawImage(tile.image, 0, 0);
     }
     if (cow.loaded) {
-        drawerContext.drawImage(cow.image, 10, 10);
+
+        for (var i = 0; i < cowQty; i++) {
+            var x = getRandom(0, 7) * 60;
+            var y = getRandom(0, 7) * 60;
+            drawerContext.drawImage(cow.image, x, y);
+        }
     }
     if (pig.loaded) {
-        drawerContext.drawImage(pig.image, 100, 100);
+        for (var i = 0; i < pigQty; i++) {
+            var x = getRandom(0, 6) * 60;
+            var y = getRandom(0, 6) * 60;
+            drawerContext.drawImage(pig.image, x, y);
+        }
     }
     if (chick.loaded) {
-        drawerContext.drawImage(chick.image, 350, 250);
+        for (var i = 0; i < chickQty; i++) {
+            var x = getRandom(0, 5) * 60;
+            var y = getRandom(0, 5) * 60;
+            drawerContext.drawImage(chick.image, x, y);
+        }
     }
 }

@@ -2,6 +2,7 @@ class Bill {
     constructor(val, qty) {
         this.value = val;
         this.quantity = qty;
+        this.imageUrl = "img/us_" + val + ".jpg";
     }
 }
 
@@ -28,8 +29,8 @@ function giveMoneyAway() {
         res.innerHTML = "No enough money";
     } else {
         for (var w of withdrawed) {
-            if (w.value > 0) {
-                res.innerHTML += w.quantity + " Bills of $" + w.value + "<br/>";
+            if (w.quantity > 0) {
+                res.innerHTML += w.quantity + " Bills of $" + w.value + "<img src=\"" + w.imageUrl + "\"/>" + "<br/>";
             }
         }
     }
@@ -38,9 +39,14 @@ function giveMoneyAway() {
 var cashList = [];
 var withdrawed = [];
 
+
+cashList.push(new Bill(100, 10));
 cashList.push(new Bill(50, 10));
 cashList.push(new Bill(20, 30));
 cashList.push(new Bill(10, 2));
+cashList.push(new Bill(5, 2));
+cashList.push(new Bill(2, 2));
+cashList.push(new Bill(1, 2));
 
 var money = 0;
 var div = 0;
